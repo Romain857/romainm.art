@@ -62,46 +62,11 @@ export default function RootLayout({
                   </Link>
                 </nav>
               </div>
-              
               {/* Main Content */}
               <div className="w-11/12 flex flex-col h-full">
-                <div className="flex items-center justify-between bg-[#ededfc] bg-opacity-100 rounded-tr-3xl p-7">
-                  <div className="flex items-center">
-                    <Image
-                      src={photo}
-                      alt="Photo"
-                      width={60}
-                      height={50}
-                      className="rounded-full"
-                    />
-                    <div className="ml-8">
-                      <span className="text-lg text-black font-semibold">Romain Martineau</span>
-                      <div className="flex items-center mt-1">
-                        <div className="w-2 h-2 bg-green-500 rounded-full mr-1"></div>
-                        <span className="text-sm text-gray-600">Online</span>
-                      </div>
-                    </div>
-                  </div>
-                    <div className="flex space-x-10 mr-12 text-gray-600">
-                      <Link href="/call" className="hover:text-gray-400">
-                        <FontAwesomeIcon icon={faPhone} className="mb-2 w-6" />
-                      </Link>
-                      <FontAwesomeIcon icon={faRotateRight} className="mb-2 w-6" />
-                    </div>
-                </div>
-
                 {/* Dynamic Content Here */}
-                <div className="flex-grow p-6 text-black">
+                <div className="flex-grow text-black">
                   {children}
-                </div>
-
-                {/* Footer Input */}
-                <div className="flex justify-center bg-gray-200 bg-opacity-100 rounded-br-3xl p-7">
-                  <input
-                    type="text"
-                    placeholder="Type a message"
-                    className="w-3/4 border border-gray-300 rounded-full p-2 focus:outline-none focus:ring-2 focus:ring-gray-400 placeholder:font-bold text-black"
-                  />
                 </div>
               </div>
             </div>
