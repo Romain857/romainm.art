@@ -45,19 +45,19 @@ export default function RootLayout({
                 </div>
                 <nav className="flex flex-col space-y-16 items-center">
                   <Link href="/" className="text-gray-600 hover:text-gray-400 flex flex-col items-center">
-                    <FontAwesomeIcon icon={faMessage} className="mb-2 w-8" />
+                    <FontAwesomeIcon icon={faMessage} className="mb-2 w-8 h-7" />
                     Chat
                   </Link>
                   <Link href="/resume" className="text-gray-600 hover:text-gray-400 flex flex-col items-center">
-                    <FontAwesomeIcon icon={faUser} className="mb-2 w-8" />
+                    <FontAwesomeIcon icon={faUser} className="mb-2 w-8 h-7" />
                     Resume
                   </Link>
                   <Link href="/work" className="text-gray-600 hover:text-gray-400 flex flex-col items-center">
-                    <FontAwesomeIcon icon={faBriefcase} className="mb-2 w-8" />
+                    <FontAwesomeIcon icon={faBriefcase} className="mb-2 w-8 h-7" />
                     Work
                   </Link>
                   <Link href="/call" className="text-gray-600 hover:text-gray-400 flex flex-col items-center">
-                    <FontAwesomeIcon icon={faPhone} className="mb-2 w-8" />
+                    <FontAwesomeIcon icon={faPhone} className="mb-2 w-8 h-7" />
                     Call
                   </Link>
                 </nav>
