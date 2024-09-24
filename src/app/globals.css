@@ -38,7 +38,7 @@ body {
 .bouncing-loader > div {
   width: 15px;
   height: 15px;
-  margin: 10px 6px 0px 6px;
+  margin: 10px 6px -6px 6px;
   border-radius: 50%;
   background-color: #929292;
   opacity: 1;
