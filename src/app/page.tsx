@@ -1,7 +1,8 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faRotateRight } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faRotateRight, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { faFaceSmile } from "@fortawesome/free-regular-svg-icons";
 import Link from "next/link";
 import Image from "next/image";
 import photo from "./public/photoRM.jpeg";
@@ -19,10 +20,19 @@ export default function Home() {
 
   const height = 20;
   const width = 20;
+  const emojis = ["😀", "😃", "😄", "😁", "😆", "😅", "😂", "🤣", "😊", "😇",
+    "🙂", "🙃", "😉", "😌", "😍", "🥰", "😘", "😗", "😙", "😚",
+    "😋", "😛", "😜", "🤪", "😝", "🤑", "🤗", "🤭", "🤫", "🤔",
+    "🤐", "😶", "😏", "😒", "🙄", "😬", "🤥", "😌", "😔", "😪",
+    "🤤", "😴", "😷", "🤒", "🤕", "🤢", "🤮", "🥵", "🥶", "🥴",
+    "😵", "🤯", "🤠", "🥳", "😎", "🤓", "🧐", "😕", "😟", "🙁",
+    "😮", "😯", "😲", "😳", "🥺", "😦", "😧", "😨", "😰", "😥",
+    "😢", "😭", "😱", "😖", "😣", "😞", "😓", "😩", "😫", "😤",
+    "😡", "😠", "🤬", "😈", "👿", "💀", "☠️", "🤡", "👹", "👺",
+    "👻", "👽", "👾", "🤖", "💩","👋"]
   const [messages, setMessages] = useState<{ text: string; time: string; isBot: boolean }[]>([]);
   const [isTyping, setIsTyping] = useState(false);
   const [newMessage, setNewMessage] = useState("");
-
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -32,13 +42,13 @@ export default function Home() {
 
       setMessages([
         {
-          text: "Welcome! You can ask me about my 'resume', 'skills', 'experience', or 'contact details', and I'll be happy to provide more information.",
+          text: "Welcome! You can ask me about my 'profile, 'resume', 'skills', 'future', or 'contact', and I'll be happy to provide more information.",
           time: time,
           isBot: true,
         },
       ]);
       setIsTyping(false);
-    }, 1500);
+    }, 2000);
   }, []);
 
   useEffect(() => {
@@ -58,6 +68,11 @@ export default function Home() {
     }
   };
 
+  const handleAddEmoji = () => {
+    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+    setNewMessage((prevMessage) => prevMessage + randomEmoji);
+  };
+
   const simulateBotTyping = (message: string) => {
     setIsTyping(true);
     setTimeout(() => {
@@ -70,7 +85,7 @@ export default function Home() {
     const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     const lowerCaseMessage = message.toLowerCase();
 
-    if (lowerCaseMessage.includes("hello") || lowerCaseMessage.includes("profile")) {
+    if (lowerCaseMessage.includes("hello") || lowerCaseMessage.includes("profile") || lowerCaseMessage.includes("👋")) {
       botResponse = "Hello! I'm Romain Martineau and I'm currently in my 5th year of computer engineering at EPSI in Nantes. After 3 years' experience at Manitou Group in Ancenis, France, I'm looking for a new experience for the end of 2024.";
     } else if (lowerCaseMessage.includes("skill")) {
       botResponse = (
@@ -86,7 +101,7 @@ export default function Home() {
             </li>
             <li>
               <Image src={allLogos.SqlLogo} alt="SQL" width={width} height={height} className="inline-block mr-2" />
-              <a href="https://www.w3schools.com/sql/" target="_blank" rel="noopener noreferrer">
+              <a href="https://sql.sh/" target="_blank" rel="noopener noreferrer">
                 <strong>SQL</strong>
               </a>
             </li>
@@ -98,7 +113,7 @@ export default function Home() {
             </li>
             <li>
               <Image src={allLogos.VueLogo} alt="Nuxt.js" width={width} height={height} className="inline-block mr-2" />
-              <a href="https://nuxtjs.org/docs" target="_blank" rel="noopener noreferrer">
+              <a href="https://nuxt.com/" target="_blank" rel="noopener noreferrer">
                 <strong>Nuxt.js / Vue.js</strong>
               </a>
             </li>
@@ -121,7 +136,6 @@ export default function Home() {
               </a>
             </li>
           </ul>
-
         </span>
       );
     } else if (lowerCaseMessage.includes("resume")) {
@@ -136,35 +150,35 @@ export default function Home() {
             <a href="https://developer.mozilla.org/fr/docs/Web/CSS" target="_blank" rel="noopener noreferrer">
               <Image src={allLogos.CssLogo} alt="CSS" width={width} height={height} className="inline-block mr-2" />
             </a>
+            <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
+              <Image src={allLogos.JsLogo} alt="JavaScript" width={width} height={height} className="inline-block mr-2" />
+            </a>
             <a href="https://nuxtjs.org/docs" target="_blank" rel="noopener noreferrer">
               <Image src={allLogos.NuxtLogo} alt="Nuxt.js" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://vuejs.org/v2/guide/" target="_blank" rel="noopener noreferrer">
               <Image src={allLogos.VueLogo} alt="Vue.js" width={width} height={height} className="inline-block mr-2" />
             </a>
-            <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.JsLogo} alt="JavaScript" width={width} height={height} className="inline-block mr-2" />
+            <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">
+              <Image src={allLogos.BootstrapLogo} alt="Bootstrap" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://docs.microsoft.com/fr-fr/dotnet/core/introduction" target="_blank" rel="noopener noreferrer">
               <Image src={allLogos.CSharpLogo} alt=".NET Core" width={width} height={height} className="inline-block mr-2" />
             </a>
+            <a href="https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-8.0&WT.mc_id=dotnet-35129-website" target="_blank" rel="noopener noreferrer">
+              <Image src={allLogos.DotNetCoreLogo} alt=".NET Core" width={width} height={height} className="inline-block mr-2" />
+            </a>
             <a href="https://docs.python.org/3/" target="_blank" rel="noopener noreferrer">
               <Image src={allLogos.PythonLogo} alt="Python" width={width} height={height} className="inline-block mr-2" />
             </a>
-            <a href="https://www.w3schools.com/sql/" target="_blank" rel="noopener noreferrer">
+            <a href="https://sql.sh/" target="_blank" rel="noopener noreferrer">
               <Image src={allLogos.SqlLogo} alt="SQL" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://git-scm.com/doc" target="_blank" rel="noopener noreferrer">
               <Image src={allLogos.GitLogo} alt="Git" width={width} height={height} className="inline-block mr-2" />
             </a>
-            <a href="https://azure.microsoft.com/fr-fr/documentation/" target="_blank" rel="noopener noreferrer">
+            <a href="https://azure.microsoft.com/en-us/products/devops" target="_blank" rel="noopener noreferrer">
               <Image src={allLogos.AzureLogo} alt="Azure" width={width} height={height} className="inline-block mr-2" />
-            </a>
-            <a href="https://www.figma.com/resources/learn-design/" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.FigmaLogo} alt="Figma" width={14} height={14} className="inline-block mr-2" />
-            </a>
-            <a href="https://miro.com/templates/" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.MiroLogo} alt="Miro" width={width} height={height} className="inline-block mr-2" />
             </a>
           </div>
 
@@ -181,13 +195,28 @@ export default function Home() {
             <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
               <Image src={allLogos.JsLogo} alt="JavaScript" width={width} height={height} className="inline-block mr-2" />
             </a>
+            <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">
+              <Image src={allLogos.TypescriptLogo} alt="Typescript" width={width} height={height} className="inline-block mr-2" />
+            </a>
+            <a href="https://ionicframework.com/" target="_blank" rel="noopener noreferrer">
+              <Image src={allLogos.IonicLogo} alt="Ionic" width={width} height={height} className="inline-block mr-2" />
+            </a>
             <a href="https://reactjs.org/docs/getting-started.html" target="_blank" rel="noopener noreferrer">
               <Image src={allLogos.ReactLogo} alt="React" width={width} height={height} className="inline-block mr-2" />
+            </a>
+            <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">
+              <Image src={allLogos.BootstrapLogo} alt="Bootstrap" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://nodejs.org/en/docs/" target="_blank" rel="noopener noreferrer">
               <Image src={allLogos.NodeLogo} alt="Node.js" width={width} height={height} className="inline-block mr-2" />
             </a>
-            <a href="https://azure.microsoft.com/fr-fr/documentation/" target="_blank" rel="noopener noreferrer">
+            <a href="https://sql.sh/" target="_blank" rel="noopener noreferrer">
+              <Image src={allLogos.SqlLogo} alt="SQL" width={width} height={height} className="inline-block mr-2" />
+            </a>
+            <a href="https://git-scm.com/doc" target="_blank" rel="noopener noreferrer">
+              <Image src={allLogos.GitLogo} alt="Git" width={width} height={height} className="inline-block mr-2" />
+            </a>
+            <a href="https://azure.microsoft.com/en-us/products/devops" target="_blank" rel="noopener noreferrer">
               <Image src={allLogos.AzureLogo} alt="Azure" width={width} height={height} className="inline-block mr-2" />
             </a>
           </div>
@@ -224,8 +253,19 @@ export default function Home() {
           You can find me on <a href="https://www.linkedin.com/in/romain-martineau-8570/" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">LinkedIn</a> or by email at <a href="mailto:romainmart.85@gmail.com" className="text-blue-500 underline">romainmart.85@gmail.com</a>
         </span>
       );
-    } else {
-      botResponse = "I don't understand.";
+    } else if (lowerCaseMessage.includes("project")) {
+      botResponse = "i'm looking for a new international experience or a french company in the west of france willing to support me over the next few years and organise my mobility in the future"
+    } else if (lowerCaseMessage.includes("more")) {
+      botResponse = "You can ask me about my 'profile' whith a simple 'hello', 'skills', 'resume' for experiences, 'project' or 'contact'"
+    }
+    else {
+      botResponse = (
+        <span>
+          I don't understand.
+          <br />
+          Type 'more' to know what you can ask me !
+        </span>
+      )
     }
 
     setTimeout(() => {
@@ -244,13 +284,13 @@ export default function Home() {
       const time = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
       setMessages([
         {
-          text: "Welcome! You can ask me about my 'profile' whith a simple 'hello', 'skills', 'resume' with experiences, or 'contact', and I'll be happy to provide more information.",
+          text: "Welcome! You can ask me about my 'profile' whith a simple 'hello', 'skills', 'resume' with experiences, 'future' or 'contact', and I'll be happy to provide more information.",
           time: time,
           isBot: true,
         },
       ]);
       setIsTyping(false);
-    }, 1000);
+    }, 1500);
   };
 
   return (
@@ -290,14 +330,14 @@ export default function Home() {
           {messages.map((msg, index) => (
             <div
               key={index}
-              className={`p-3 rounded-lg shadow-md font-sans border border-gray-200 w-2/6 ${msg.isBot ? "bg-white self-start ml-4" : "bg-[#d7f8f4] self-end mr-4"}`}
+              className={`p-4 shadow-md border border-gray-200 max-w-md w-fit ${msg.isBot ? "bg-white self-start ml-4 rounded-t-lg rounded-br-lg" : "bg-[#d7f8f4] self-end mr-4 rounded-t-lg rounded-bl-lg"}`}
             >
-              <p className="text-gray-800">{msg.text}</p>
+              <p className="text-gray-800 break-words">{msg.text}</p>
               <p className="text-sm text-gray-500 mt-2">{msg.time}</p>
             </div>
           ))}
           {isTyping && (
-            <div className="self-start ml-4 p-4 rounded-lg shadow-md font-sans border bg-white border-gray-200"><BouncingDotsLoader /></div>
+            <div className="self-start ml-4 p-3 rounded-lg shadow-md border bg-white border-gray-200"><BouncingDotsLoader /></div>
           )}
           <div ref={messagesEndRef} />
         </div>
@@ -305,14 +345,23 @@ export default function Home() {
 
       {/* Footer Input */}
       <div className="flex justify-center bg-gray-200 bg-opacity-100 rounded-br-3xl p-7">
+        <button className="mr-3 px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-300 transition duration-300 shadow-md flex items-center justify-center" onClick={handleAddEmoji}>
+          <FontAwesomeIcon className="w-7 h-7 text-gray-700" icon={faFaceSmile} />
+        </button>
         <input
           type="text"
           placeholder="Type a message"
-          className="w-3/4 border border-gray-300 rounded-full pl-8 p-2 focus:outline-none focus:ring-2 focus:ring-gray-400 placeholder:font-bold"
+          className="w-3/4 border border-gray-300 rounded-full pl-8 p-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
           value={newMessage}
           onChange={(e) => setNewMessage(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && sendMessage()}
         />
+        <button
+          onClick={sendMessage}
+          className="ml-3 bg-gray-400 text-white px-4 py-2 rounded-full hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400"
+        >
+          <FontAwesomeIcon icon={faPaperPlane} />
+        </button>
       </div>
     </div>
   );

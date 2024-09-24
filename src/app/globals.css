@@ -17,7 +17,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Roboto;
+  /* font-family: Roboto; */
   /* background: linear-gradient(135deg, #ff7e5f, #feb47b);
   background-attachment: fixed; */
 }
@@ -36,9 +36,9 @@ body {
 }
 
 .bouncing-loader > div {
-  width: 16px;
-  height: 16px;
-  margin: 10px 6px 0px 6px;
+  width: 15px;
+  height: 15px;
+  margin: 10px 6px -6px 6px;
   border-radius: 50%;
   background-color: #929292;
   opacity: 1;
