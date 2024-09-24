@@ -35,12 +35,12 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         {/* Navbar */}
-        <header className="w-full pb-1 bg-white bg-opacity-60 shadow-lg fixed">
-          <nav className="flex items-center justify-between px-2 mx-4">
+        <header className="w-full bg-white bg-opacity-50 shadow-lg fixed">
+          <nav className="flex items-center justify-between mx-4 ">
             <div className="flex space-x-2">
-              <span className="mx-2">Made with</span>
+              <span className="mx-2 text-black">Made with</span>
               <a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer">
-                <Image src={allLogos.NextLogo} alt="NextJS" width={20} height={20} className="inline-block mr-2" />
+                <Image src={allLogos.NextLogo} alt="NextJS" width={18} height={18} className="inline-block mr-2" />
               </a>
               <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">
                 <Image src={allLogos.ReactLogo} alt="React" width={20} height={20} className="inline-block mr-2" />
@@ -68,7 +68,7 @@ export default function RootLayout({
             <div className="relative w-4/6 h-5/6 bg-gray-100 rounded-3xl shadow-lg p-0 flex">
               {/* LeftBar */}
               <div className="w-1/12 h-full bg-white bg-opacity-70 rounded-l-3xl p-4 flex flex-col space-y-4">
-                <div className="flex space-x-2 p-1 mb-8">
+                <div className="flex space-x-2 p-1 mb-9">
                   <div className="min-w-[13px] min-h-[13px] bg-red-500 rounded-full"></div>
                   <div className="min-w-[13px] min-h-[13px] bg-orange-500 rounded-full"></div>
                   <div className="min-w-[13px] min-h-[13px] bg-green-500 rounded-full"></div>
