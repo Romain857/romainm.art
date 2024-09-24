@@ -6,7 +6,7 @@ import { faPhone, faUser, faBriefcase, faMessage } from "@fortawesome/free-solid
 import Link from "next/link";
 import Image from "next/image";
 import * as allLogos from "./utils/index";
-import { metadata } from "./components/metadata";
+// import { metadata } from "./components/metadata";
 
 export default function RootLayout({
   children,
@@ -30,8 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
+        <title>Romain Martineau</title>
       </head>
       <body className="font-sans antialiased">
         {/* Navbar */}
