@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faRotateRight } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faRotateRight, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import Image from "next/image";
 import photo from "./public/photoRM.jpeg";
@@ -22,7 +22,6 @@ export default function Home() {
   const [messages, setMessages] = useState<{ text: string; time: string; isBot: boolean }[]>([]);
   const [isTyping, setIsTyping] = useState(false);
   const [newMessage, setNewMessage] = useState("");
-
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -38,7 +37,7 @@ export default function Home() {
         },
       ]);
       setIsTyping(false);
-    }, 1500);
+    }, 2000);
   }, []);
 
   useEffect(() => {
@@ -86,7 +85,7 @@ export default function Home() {
             </li>
             <li>
               <Image src={allLogos.SqlLogo} alt="SQL" width={width} height={height} className="inline-block mr-2" />
-              <a href="https://www.w3schools.com/sql/" target="_blank" rel="noopener noreferrer">
+              <a href="https://sql.sh/" target="_blank" rel="noopener noreferrer">
                 <strong>SQL</strong>
               </a>
             </li>
@@ -98,7 +97,7 @@ export default function Home() {
             </li>
             <li>
               <Image src={allLogos.VueLogo} alt="Nuxt.js" width={width} height={height} className="inline-block mr-2" />
-              <a href="https://nuxtjs.org/docs" target="_blank" rel="noopener noreferrer">
+              <a href="https://nuxt.com/" target="_blank" rel="noopener noreferrer">
                 <strong>Nuxt.js / Vue.js</strong>
               </a>
             </li>
@@ -151,7 +150,7 @@ export default function Home() {
             <a href="https://docs.python.org/3/" target="_blank" rel="noopener noreferrer">
               <Image src={allLogos.PythonLogo} alt="Python" width={width} height={height} className="inline-block mr-2" />
             </a>
-            <a href="https://www.w3schools.com/sql/" target="_blank" rel="noopener noreferrer">
+            <a href="https://sql.sh/" target="_blank" rel="noopener noreferrer">
               <Image src={allLogos.SqlLogo} alt="SQL" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://git-scm.com/doc" target="_blank" rel="noopener noreferrer">
@@ -224,7 +223,10 @@ export default function Home() {
           You can find me on <a href="https://www.linkedin.com/in/romain-martineau-8570/" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">LinkedIn</a> or by email at <a href="mailto:romainmart.85@gmail.com" className="text-blue-500 underline">romainmart.85@gmail.com</a>
         </span>
       );
-    } else {
+    } else if (lowerCaseMessage.includes("future")) {
+      botResponse = "i'm looking for a new international experience or a french company in the west of france willing to support me over the next few years and organise my mobility in the future"
+    }
+    else {
       botResponse = "I don't understand.";
     }
 
@@ -250,7 +252,7 @@ export default function Home() {
         },
       ]);
       setIsTyping(false);
-    }, 1000);
+    }, 1500);
   };
 
   return (
@@ -290,14 +292,14 @@ export default function Home() {
           {messages.map((msg, index) => (
             <div
               key={index}
-              className={`p-3 rounded-lg shadow-md font-sans border border-gray-200 w-2/6 ${msg.isBot ? "bg-white self-start ml-4" : "bg-[#d7f8f4] self-end mr-4"}`}
+              className={`p-3 rounded-lg shadow-md border border-gray-200 w-2/6 ${msg.isBot ? "bg-white self-start ml-4" : "bg-[#d7f8f4] self-end mr-4"}`}
             >
               <p className="text-gray-800">{msg.text}</p>
               <p className="text-sm text-gray-500 mt-2">{msg.time}</p>
             </div>
           ))}
           {isTyping && (
-            <div className="self-start ml-4 p-4 rounded-lg shadow-md font-sans border bg-white border-gray-200"><BouncingDotsLoader /></div>
+            <div className="self-start ml-4 p-4 rounded-lg shadow-md border bg-white border-gray-200"><BouncingDotsLoader /></div>
           )}
           <div ref={messagesEndRef} />
         </div>
@@ -308,11 +310,17 @@ export default function Home() {
         <input
           type="text"
           placeholder="Type a message"
-          className="w-3/4 border border-gray-300 rounded-full pl-8 p-2 focus:outline-none focus:ring-2 focus:ring-gray-400 placeholder:font-bold"
+          className="w-3/4 border border-gray-300 rounded-full pl-8 p-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
           value={newMessage}
           onChange={(e) => setNewMessage(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && sendMessage()}
         />
+        <button
+          onClick={sendMessage}
+          className="ml-3 bg-gray-400 text-white px-4 py-2 rounded-full hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400"
+        >
+          <FontAwesomeIcon icon={faPaperPlane} />
+        </button>
       </div>
     </div>
   );
