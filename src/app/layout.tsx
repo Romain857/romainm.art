@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import "./globals.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faUser, faBriefcase, faMessage } from "@fortawesome/free-solid-svg-icons";
@@ -16,7 +16,7 @@ export default function RootLayout({
 
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
   const [isMounted, setIsMounted] = useState(false);
-  const [fullScreen, setFullSreen] = useState(false);
+  // const [fullScreen, setFullSreen] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);

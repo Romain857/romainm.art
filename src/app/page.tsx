@@ -183,7 +183,7 @@ export default function Home() {
           </div>
 
           <br />
-          In 2021, I designed a mobile application to present the BDE-WIPS' association, manage its events and the timetable for the school's students.
+          In 2021, I designed a mobile application to present the BDE-WIPS&apos; association, manage its events and the timetable for the school&apos;s students.
           <br />
           <div>
             <a href="https://developer.mozilla.org/fr/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
@@ -222,7 +222,7 @@ export default function Home() {
           </div>
           <br />
 
-          In 2020, I participated in the development on the company's new project, providing each customer with full administration of their company's network in 3D
+          In 2020, I participated in the development on the company&apos;s new project, providing each customer with full administration of their company&apos;s network in 3D
           <br />
           <div>
             <a href="https://developer.mozilla.org/fr/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
@@ -254,16 +254,16 @@ export default function Home() {
         </span>
       );
     } else if (lowerCaseMessage.includes("project")) {
-      botResponse = "i'm looking for a new international experience or a french company in the west of france willing to support me over the next few years and organise my mobility in the future"
+      botResponse = "I'm looking for a new international experience or a french company in the west of france willing to support me over the next few years and organise my mobility in the future"
     } else if (lowerCaseMessage.includes("more")) {
       botResponse = "You can ask me about my 'profile' whith a simple 'hello', 'skills', 'resume' for experiences, 'project' or 'contact'"
     }
     else {
       botResponse = (
         <span>
-          I don't understand.
+          I don&apos;t understand.
           <br />
-          Type 'more' to know what you can ask me !
+          Type &apos;more&apos; to know what you can ask me !
         </span>
       )
     }
