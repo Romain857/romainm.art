@@ -20,6 +20,16 @@ export default function Home() {
 
   const height = 20;
   const width = 20;
+  const emojis = ["😀", "😃", "😄", "😁", "😆", "😅", "😂", "🤣", "😊", "😇",
+    "🙂", "🙃", "😉", "😌", "😍", "🥰", "😘", "😗", "😙", "😚",
+    "😋", "😛", "😜", "🤪", "😝", "🤑", "🤗", "🤭", "🤫", "🤔",
+    "🤐", "😶", "😏", "😒", "🙄", "😬", "🤥", "😌", "😔", "😪",
+    "🤤", "😴", "😷", "🤒", "🤕", "🤢", "🤮", "🥵", "🥶", "🥴",
+    "😵", "🤯", "🤠", "🥳", "😎", "🤓", "🧐", "😕", "😟", "🙁",
+    "😮", "😯", "😲", "😳", "🥺", "😦", "😧", "😨", "😰", "😥",
+    "😢", "😭", "😱", "😖", "😣", "😞", "😓", "😩", "😫", "😤",
+    "😡", "😠", "🤬", "😈", "👿", "💀", "☠️", "🤡", "👹", "👺",
+    "👻", "👽", "👾", "🤖", "💩","👋"]
   const [messages, setMessages] = useState<{ text: string; time: string; isBot: boolean }[]>([]);
   const [isTyping, setIsTyping] = useState(false);
   const [newMessage, setNewMessage] = useState("");
@@ -32,7 +42,7 @@ export default function Home() {
 
       setMessages([
         {
-          text: "Welcome! You can ask me about my 'profile, 'resume', 'skills', 'future', or 'contact details', and I'll be happy to provide more information.",
+          text: "Welcome! You can ask me about my 'profile, 'resume', 'skills', 'future', or 'contact', and I'll be happy to provide more information.",
           time: time,
           isBot: true,
         },
@@ -59,7 +69,8 @@ export default function Home() {
   };
 
   const handleAddEmoji = () => {
-    setNewMessage((prevMessage) => prevMessage + "👋");
+    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+    setNewMessage((prevMessage) => prevMessage + randomEmoji);
   };
 
   const simulateBotTyping = (message: string) => {
@@ -125,7 +136,6 @@ export default function Home() {
               </a>
             </li>
           </ul>
-
         </span>
       );
     } else if (lowerCaseMessage.includes("resume")) {
