@@ -30,7 +30,7 @@ export default function Home() {
     "😢", "😭", "😱", "😖", "😣", "😞", "😓", "😩", "😫", "😤",
     "😡", "😠", "🤬", "😈", "👿", "💀", "☠️", "🤡", "👹", "👺",
     "👻", "👽", "👾", "🤖", "💩","👋"]
-  const [messages, setMessages] = useState<{ text: string; time: string; isBot: boolean }[]>([]);
+  const [messages, setMessages] = useState<{ text: string | JSX.Element; time: string; isBot: boolean }[]>([]);
   const [isTyping, setIsTyping] = useState(false);
   const [newMessage, setNewMessage] = useState("");
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
@@ -81,7 +81,7 @@ export default function Home() {
   };
 
   const generateBotResponse = (message: string) => {
-    let botResponse = "";
+    let botResponse: string | JSX.Element = "";
     const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     const lowerCaseMessage = message.toLowerCase();
 
