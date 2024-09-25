@@ -81,14 +81,15 @@ export default function Home() {
   };
 
   const generateBotResponse = (message: string) => {
-    let botResponse: string | JSX.Element = "";
-    const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-    const lowerCaseMessage = message.toLowerCase();
+  const botResponse: (string | JSX.Element)[] = [];
+  const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  const lowerCaseMessage = message.toLowerCase();
 
     if (lowerCaseMessage.includes("hello") || lowerCaseMessage.includes("profile") || lowerCaseMessage.includes("👋")) {
-      botResponse = "Hello! I'm Romain Martineau and I'm currently in my 5th year of computer engineering at EPSI in Nantes. After 3 years' experience at Manitou Group in Ancenis, France, I'm looking for a new experience for the end of 2024.";
-    } else if (lowerCaseMessage.includes("skill")) {
-      botResponse = (
+      botResponse.push("Hello! I'm Romain Martineau and I'm currently in my 5th year of computer engineering at EPSI in Nantes. After 3 years' experience at Manitou Group in Ancenis, France, I'm looking for a new experience for the end of 2024.");
+    } 
+    if (lowerCaseMessage.includes("skill")) {
+      botResponse.push(
         <span>
           I have gained extensive experience in development technologies:
           <ul>
@@ -139,7 +140,7 @@ export default function Home() {
         </span>
       );
     } else if (lowerCaseMessage.includes("resume")) {
-      botResponse = (
+      botResponse.push(
         <span>
           During my 3 years at Manitou Group, I developed a ticket management application and managed the deployment via Azure DevOps as well as integrating an automated testing tool.
           <br />
@@ -247,34 +248,39 @@ export default function Home() {
 
         </span>
       );
-    } else if (lowerCaseMessage.includes("contact")) {
-      botResponse = (
+    } 
+    if (lowerCaseMessage.includes("contact")) {
+      botResponse.push(
         <span>
           You can find me on <a href="https://www.linkedin.com/in/romain-martineau-8570/" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">LinkedIn</a> or by email at <a href="mailto:romainmart.85@gmail.com" className="text-blue-500 underline">romainmart.85@gmail.com</a>
         </span>
       );
-    } else if (lowerCaseMessage.includes("project")) {
-      botResponse = "I'm looking for a new international experience or a french company in the west of france willing to support me over the next few years and organise my mobility in the future"
-    } else if (lowerCaseMessage.includes("more")) {
-      botResponse = "You can ask me about my 'profile' whith a simple 'hello', 'skills', 'resume' for experiences, 'project' or 'contact'"
     }
-    else {
-      botResponse = (
+    if (lowerCaseMessage.includes("future")) {
+      botResponse.push("I'm looking for a new international experience or a french company in the west of france as a Full Stack Developer willing to support me over the next few years and organise my mobility in the future")
+    } 
+    if (lowerCaseMessage.includes("more")) {
+      botResponse.push("You can ask me about my 'profile' whith a simple 'hello', 'skills', 'resume' for experiences, 'project' or 'contact'")
+    }
+    if (botResponse.length === 0) {
+      botResponse.push(
         <span>
-          I don&apos;t understand.
+          What did you say ?
           <br />
           Type &apos;more&apos; to know what you can ask me !
         </span>
       )
     }
 
-    setTimeout(() => {
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        { text: botResponse, time: currentTime, isBot: true },
-      ]);
-      setIsTyping(false);
-    }, 1000);
+    botResponse.forEach((response, index) => {
+      setTimeout(() => {
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { text: response, time: currentTime, isBot: true },
+        ]);
+        setIsTyping(false);
+      }, 1000 * (index + 1));
+    });
   };
 
   const reload = () => {
@@ -330,7 +336,7 @@ export default function Home() {
           {messages.map((msg, index) => (
             <div
               key={index}
-              className={`p-4 shadow-md border border-gray-200 max-w-md w-fit ${msg.isBot ? "bg-white self-start ml-4 rounded-t-lg rounded-br-lg" : "bg-[#d7f8f4] self-end mr-4 rounded-t-lg rounded-bl-lg"}`}
+              className={`p-4 mt-2 shadow-md border border-gray-200 max-w-md w-fit ${msg.isBot ? "bg-white self-start ml-4 rounded-t-lg rounded-br-lg" : "bg-[#d7f8f4] self-end mr-4 rounded-t-lg rounded-bl-lg"}`}
             >
               <p className="text-gray-800 break-words">{msg.text}</p>
               <p className="text-sm text-gray-500 mt-2">{msg.time}</p>
