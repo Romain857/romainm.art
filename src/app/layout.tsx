@@ -28,14 +28,14 @@ export default function RootLayout({
   }, []);
 
   return (
-    <html lang="en">
+    <html>
       <head>
         <title>Romain Martineau</title>
       </head>
       <body className="font-sans antialiased">
         {/* Navbar */}
-        <header className="w-full bg-white bg-opacity-50 shadow-lg fixed">
-          <nav className="flex items-center justify-between mx-4 ">
+        <header className="hidden md:block w-full bg-white bg-opacity-50 shadow-lg fixed">
+          <nav className="flex items-center justify-between mx-4">
             <div className="flex space-x-2">
               <span className="mx-2 text-black">Made with</span>
               <a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer">
@@ -64,10 +64,10 @@ export default function RootLayout({
 
         <div className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 min-h-screen">
           <div className="flex justify-center items-center h-screen">
-            <div className="relative w-4/6 h-5/6 bg-gray-100 rounded-3xl shadow-lg p-0 flex">
+            <div className="relative w-full md:w-4/6 h-full md:h-5/6 bg-gray-100 rounded-3xl shadow-lg p-0 flex">
               {/* LeftBar */}
-              <div className="w-1/12 h-full bg-white bg-opacity-70 rounded-l-3xl p-4 flex flex-col space-y-4">
-                <div className="flex space-x-2 p-1 mb-9">
+              <div className="hidden md:flex w-1/12 h-full bg-white bg-opacity-70 rounded-l-3xl p-4 flex-col space-y-4">
+                <div className="hidden xl:flex space-x-2 p-1 mb-9">
                   <div className="min-w-[13px] min-h-[13px] bg-red-500 rounded-full"></div>
                   <div className="min-w-[13px] min-h-[13px] bg-orange-500 rounded-full"></div>
                   <div className="min-w-[13px] min-h-[13px] bg-green-500 rounded-full"></div>
@@ -92,10 +92,11 @@ export default function RootLayout({
                   </Link>
                 </nav>
               </div>
+
               {/* Main Content */}
-              <div className="w-11/12 flex flex-col h-full">
+              <div className="w-full md:w-11/12 flex flex-col h-full">
                 {/* Dynamic Content Here */}
-                <div className="flex-grow text-black">
+                <div className="flex-grow text-black h-full">
                   {children}
                 </div>
               </div>
@@ -104,5 +105,6 @@ export default function RootLayout({
         </div>
       </body>
     </html>
+
   );
 }

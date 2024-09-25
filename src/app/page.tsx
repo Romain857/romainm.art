@@ -42,7 +42,7 @@ export default function Home() {
 
       setMessages([
         {
-          text: "Welcome! You can ask me about my 'profile, 'resume', 'skills', 'future', or 'contact', and I'll be happy to provide more information.",
+          text: "Welcome! You can ask me about my 'profile, 'resume', 'skills', 'futur', or 'contact', and I'll be happy to provide more information.",
           time: time,
           isBot: true,
         },
@@ -256,11 +256,11 @@ export default function Home() {
         </span>
       );
     }
-    if (lowerCaseMessage.includes("future")) {
+    if (lowerCaseMessage.includes("futur")) {
       botResponse.push("I'm looking for a new international experience or a french company in the west of france as a Full Stack Developer willing to support me over the next few years and organise my mobility in the future")
     } 
     if (lowerCaseMessage.includes("more")) {
-      botResponse.push("You can ask me about my 'profile' whith a simple 'hello', 'skills', 'resume' for experiences, 'project' or 'contact'")
+      botResponse.push("You can ask me about my 'profile' whith a simple 'hello', 'skills', 'resume' for experiences, 'futur' or 'contact'")
     }
     if (botResponse.length === 0) {
       botResponse.push(
@@ -302,7 +302,7 @@ export default function Home() {
   return (
     <div className="flex flex-col h-full">
       {/* Header */}
-      <div className="flex items-center justify-between bg-[#ededfc] bg-opacity-100 rounded-tr-3xl p-7">
+      <div className="flex items-center justify-between bg-[#ededfc] bg-opacity-100 md:rounded-tr-3xl p-4">
         <div className="flex items-center">
           <Link href="/resume">
             <Image src={photo} alt="Photo" width={60} height={50} className="rounded-full" />
@@ -315,7 +315,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex space-x-10 mr-12 text-gray-600">
+        <div className="flex space-x-10 md:mr-12 text-gray-600">
           <Link href="/call" className="hover:text-gray-400">
             <FontAwesomeIcon icon={faPhone} className="mb-2 w-8 h-5" />
           </Link>
@@ -336,7 +336,7 @@ export default function Home() {
           {messages.map((msg, index) => (
             <div
               key={index}
-              className={`p-4 mt-2 shadow-md border border-gray-200 max-w-md w-fit ${msg.isBot ? "bg-white self-start ml-4 rounded-t-lg rounded-br-lg" : "bg-[#d7f8f4] self-end mr-4 rounded-t-lg rounded-bl-lg"}`}
+              className={`p-4 mt-2 shadow-md border border-gray-200 max-w-md w-fit ${msg.isBot ? "bg-white self-start md:ml-4 rounded-t-lg rounded-br-lg" : "bg-[#d7f8f4] self-end mr-4 rounded-t-lg rounded-bl-lg"}`}
             >
               <p className="text-gray-800 break-words">{msg.text}</p>
               <p className="text-sm text-gray-500 mt-2">{msg.time}</p>
@@ -350,7 +350,7 @@ export default function Home() {
       </div>
 
       {/* Footer Input */}
-      <div className="flex justify-center bg-gray-200 bg-opacity-100 rounded-br-3xl p-7">
+      <div className="flex justify-center bg-gray-200 bg-opacity-100 md:rounded-br-3xl p-7">
         <button className="mr-3 px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-300 transition duration-300 shadow-md flex items-center justify-center" onClick={handleAddEmoji}>
           <FontAwesomeIcon className="w-7 h-7 text-gray-700" icon={faFaceSmile} />
         </button>
