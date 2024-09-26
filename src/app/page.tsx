@@ -270,11 +270,15 @@ export default function Home() {
     if (lowerCaseMessage.includes("address")) {
       botResponse.push("I come from Vendée and I currently live in Nantes in France.")
     } 
-    if (lowerCaseMessage.includes("address")) {
-      botResponse.push("I come from Vendée and I currently live in Nantes in France.")
-    } 
     if (lowerCaseMessage.includes("education")) {
-      botResponse.push("I come from Vendée and I currently live in Nantes in France.")
+      botResponse.push(
+        <span>During my 5 years of higher education as an application developer, I obtained : 
+          <br />
+          - Master / <strong>Title : Expert in computer science and information systems</strong> <br />
+          - Bachelor / <strong>Title : Application Developer Designer</strong> <br />
+          - Advanced Technician's Certificate or <strong>BTS SIO, software solutions and business applications</strong> option
+        </span>
+        )
     } 
     if (lowerCaseMessage.includes("more")) {
       botResponse.push(
