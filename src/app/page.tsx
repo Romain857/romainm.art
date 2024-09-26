@@ -42,7 +42,11 @@ export default function Home() {
 
       setMessages([
         {
-          text: "Welcome! You can ask me about my 'profile, 'resume', 'skills', 'futur', or 'contact', and I'll be happy to provide more information.",
+          text: (
+            <>
+              Welcome 👋 ! I&apos;m Romain <br /> <br />   You can say <strong>hello</strong> to start conversation or ask me about my <strong>profile</strong>, <strong>resume</strong>, <strong>skills</strong>, <strong>futur</strong>, <strong>eduction</strong>, <strong>address</strong> or <strong>contact</strong> by sending keywords.
+            </>
+          ),
           time: time,
           isBot: true,
         },
@@ -86,12 +90,16 @@ export default function Home() {
   const lowerCaseMessage = message.toLowerCase();
 
     if (lowerCaseMessage.includes("hello") || lowerCaseMessage.includes("profile") || lowerCaseMessage.includes("👋")) {
-      botResponse.push("Hello! I'm Romain Martineau and I'm currently in my 5th year of computer engineering at EPSI in Nantes. After 3 years' experience at Manitou Group in Ancenis, France, I'm looking for a new experience for the end of 2024.");
+      botResponse.push(
+        <span>
+          Hello 👋 ! My name is Romain Martineau and I&apos;m a Full Stack Developer. <br /> I&apos;m currently in my 5th year of computer engineering at EPSI in Nantes. After 3 years&apos; experience at Manitou Group in Ancenis, France, I&apos;m looking for a new experience for the end of 2024.
+        </span>
+        );
     } 
     if (lowerCaseMessage.includes("skill")) {
       botResponse.push(
         <span>
-          I have gained extensive experience in development technologies:
+          I&apos;ve used many programming languages and tools during my career, but I&apos;ve mainly developed my skills as a developer on :
           <ul>
             <li>
               <Image src={allLogos.HtmlLogo} alt="HTML" width={width} height={height} className="inline-block mr-2" />
@@ -142,7 +150,7 @@ export default function Home() {
     } else if (lowerCaseMessage.includes("resume")) {
       botResponse.push(
         <span>
-          During my 3 years at Manitou Group, I developed a ticket management application and managed the deployment via Azure DevOps as well as integrating an automated testing tool.
+          During my 3 years at Manitou Group, I developed a ticket management application and managed the deployment via Azure DevOps as well as integrating an automated testing tool for non-regression business tests.
           <br />
           <div>
             <a href="https://developer.mozilla.org/fr/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
@@ -259,15 +267,26 @@ export default function Home() {
     if (lowerCaseMessage.includes("futur")) {
       botResponse.push("I'm looking for a new international experience or a french company in the west of france as a Full Stack Developer willing to support me over the next few years and organise my mobility in the future")
     } 
+    if (lowerCaseMessage.includes("address")) {
+      botResponse.push("I come from Vendée and I currently live in Nantes in France.")
+    } 
+    if (lowerCaseMessage.includes("address")) {
+      botResponse.push("I come from Vendée and I currently live in Nantes in France.")
+    } 
+    if (lowerCaseMessage.includes("education")) {
+      botResponse.push("I come from Vendée and I currently live in Nantes in France.")
+    } 
     if (lowerCaseMessage.includes("more")) {
-      botResponse.push("You can ask me about my 'profile' whith a simple 'hello', 'skills', 'resume' for experiences, 'futur' or 'contact'")
+      botResponse.push(
+        <span>You can ask me about my <strong>profile</strong> whith a simple <strong>hello</strong>, <strong>skills</strong> for core skills, <strong>resume</strong> for experiences, <strong>futur</strong> for my professional project, <strong>eduction</strong> for my diploma, <strong>address</strong> or <strong>contact</strong></span>
+      );
     }
     if (botResponse.length === 0) {
       botResponse.push(
         <span>
           What did you say ?
           <br />
-          Type &apos;more&apos; to know what you can ask me !
+          Type <strong>more</strong> to know what you can ask me !
         </span>
       )
     }
@@ -290,7 +309,11 @@ export default function Home() {
       const time = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
       setMessages([
         {
-          text: "Welcome! You can ask me about my 'profile' whith a simple 'hello', 'skills', 'resume' with experiences, 'future' or 'contact', and I'll be happy to provide more information.",
+          text: (
+            <>
+              Hello ! You can ask me about my <strong>profile</strong> whith a simple <strong>hello</strong>, <strong>resume</strong> for experiences, <strong>skills</strong> for core skills, <strong>resume</strong> for experiences, <strong>futur</strong> for my professional project, <strong>eduction</strong> for my diploma, <strong>address</strong> or <strong>contact</strong>, and I&apos;ll be happy to provide more information.
+            </>
+          ),
           time: time,
           isBot: true,
         },
@@ -336,7 +359,7 @@ export default function Home() {
           {messages.map((msg, index) => (
             <div
               key={index}
-              className={`p-4 mt-2 shadow-md border border-gray-200 max-w-md w-fit ${msg.isBot ? "bg-white self-start md:ml-4 rounded-t-lg rounded-br-lg" : "bg-[#d7f8f4] self-end mr-4 rounded-t-lg rounded-bl-lg"}`}
+              className={`p-4 mt-2 shadow-md border border-gray-200 max-w-md w-fit ${msg.isBot ? "bg-white self-start md:ml-4 rounded-t-[20px] rounded-br-[20px] " : "bg-[#d7f8f4] self-end mr-4 rounded-t-[20px] rounded-bl-[20px]"}`}
             >
               <p className="text-gray-800 break-words">{msg.text}</p>
               <p className="text-sm text-gray-500 mt-2">{msg.time}</p>
