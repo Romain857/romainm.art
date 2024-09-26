@@ -276,7 +276,7 @@ export default function Home() {
           <br />
           - Master / <strong>Title : Expert in computer science and information systems</strong> <br />
           - Bachelor / <strong>Title : Application Developer Designer</strong> <br />
-          - Advanced Technician's Certificate or <strong>BTS SIO, software solutions and business applications</strong> option
+          - Advanced Technician&apos;s Certificate or <strong>BTS SIO, software solutions and business applications</strong> option
         </span>
         )
     } 
