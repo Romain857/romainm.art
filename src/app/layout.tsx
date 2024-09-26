@@ -64,7 +64,7 @@ export default function RootLayout({
 
         <div className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 min-h-screen">
           <div className="flex justify-center items-center h-screen">
-            <div className="relative w-full md:w-4/6 h-full md:h-5/6 bg-gray-100 rounded-3xl shadow-lg p-0 flex">
+            <div className="relative w-full md:w-4/6 h-full md:h-5/6 bg-gray-100 md:rounded-3xl shadow-lg p-0 flex">
               {/* LeftBar */}
               <div className="hidden md:flex w-1/12 h-full bg-white bg-opacity-70 rounded-l-3xl p-4 flex-col space-y-4">
                 <div className="hidden xl:flex space-x-2 p-1 mb-9">
