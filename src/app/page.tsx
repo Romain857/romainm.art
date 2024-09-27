@@ -5,9 +5,8 @@ import { faPhone, faRotateRight, faPaperPlane } from "@fortawesome/free-solid-sv
 import { faFaceSmile } from "@fortawesome/free-regular-svg-icons";
 import Link from "next/link";
 import Image from "next/image";
-import photo from "./public/photoRM.jpeg";
-import * as allLogos from "./utils/index"
-import BouncingDotsLoader from "./components/BouncingDotsLoader"
+import * as images from "../utils/images"
+import BouncingDotsLoader from "../components/BouncingDotsLoader"
 
 
 export default function Home() {
@@ -44,7 +43,7 @@ export default function Home() {
         {
           text: (
             <>
-              Welcome 👋 ! I&apos;m Romain <br /> <br />   You can say <strong>hello</strong> to start conversation or ask me about my <strong>profile</strong>, <strong>resume</strong>, <strong>skills</strong>, <strong>futur</strong>, <strong>eduction</strong>, <strong>address</strong> or <strong>contact</strong> by sending keywords.
+              Welcome 👋 ! I&apos;m Romain <br /> <br />You can say <strong>hello</strong> to start conversation or ask me about my <strong>profile</strong>, <strong>resume</strong>, <strong>skills</strong>, <strong>futur</strong>, <strong>eduction</strong>, <strong>address</strong> or <strong>contact</strong> by sending keywords.
             </>
           ),
           time: time,
@@ -102,44 +101,44 @@ export default function Home() {
           I&apos;ve used many programming languages and tools during my career, but I&apos;ve mainly developed my skills as a developer on :
           <ul>
             <li>
-              <Image src={allLogos.HtmlLogo} alt="HTML" width={width} height={height} className="inline-block mr-2" />
-              <Image src={allLogos.CssLogo} alt="CSS" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.HtmlLogo} alt="HTML" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.CssLogo} alt="CSS" width={width} height={height} className="inline-block mr-2" />
               <a href="https://developer.mozilla.org/fr/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
                 <strong>HTML / CSS</strong>
               </a>
             </li>
             <li>
-              <Image src={allLogos.SqlLogo} alt="SQL" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.SqlLogo} alt="SQL" width={width} height={height} className="inline-block mr-2" />
               <a href="https://sql.sh/" target="_blank" rel="noopener noreferrer">
                 <strong>SQL</strong>
               </a>
             </li>
             <li>
-              <Image src={allLogos.JsLogo} alt="JavaScript" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.JsLogo} alt="JavaScript" width={width} height={height} className="inline-block mr-2" />
               <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
                 <strong>JavaScript</strong>
               </a>
             </li>
             <li>
-              <Image src={allLogos.VueLogo} alt="Nuxt.js" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.VueLogo} alt="Nuxt.js" width={width} height={height} className="inline-block mr-2" />
               <a href="https://nuxt.com/" target="_blank" rel="noopener noreferrer">
                 <strong>Nuxt.js / Vue.js</strong>
               </a>
             </li>
             <li>
-              <Image src={allLogos.PythonLogo} alt="Python" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.PythonLogo} alt="Python" width={width} height={height} className="inline-block mr-2" />
               <a href="https://docs.python.org/3/" target="_blank" rel="noopener noreferrer">
                 <strong>Python</strong>
               </a>
             </li>
             <li>
-              <Image src={allLogos.CSharpLogo} alt=".NET Core" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.CSharpLogo} alt=".NET Core" width={width} height={height} className="inline-block mr-2" />
               <a href="https://docs.microsoft.com/fr-fr/dotnet/core/introduction" target="_blank" rel="noopener noreferrer">
                 <strong>.NET Core</strong>
               </a>
             </li>
             <li>
-              <Image src={allLogos.NodeLogo} alt="Node.js" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.NodeLogo} alt="Node.js" width={width} height={height} className="inline-block mr-2" />
               <a href="https://nodejs.org/en/docs/" target="_blank" rel="noopener noreferrer">
                 <strong>Node.js</strong>
               </a>
@@ -154,40 +153,40 @@ export default function Home() {
           <br />
           <div>
             <a href="https://developer.mozilla.org/fr/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.HtmlLogo} alt="HTML" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.HtmlLogo} alt="HTML" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://developer.mozilla.org/fr/docs/Web/CSS" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.CssLogo} alt="CSS" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.CssLogo} alt="CSS" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.JsLogo} alt="JavaScript" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.JsLogo} alt="JavaScript" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://nuxtjs.org/docs" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.NuxtLogo} alt="Nuxt.js" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.NuxtLogo} alt="Nuxt.js" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://vuejs.org/v2/guide/" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.VueLogo} alt="Vue.js" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.VueLogo} alt="Vue.js" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.BootstrapLogo} alt="Bootstrap" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.BootstrapLogo} alt="Bootstrap" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://docs.microsoft.com/fr-fr/dotnet/core/introduction" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.CSharpLogo} alt=".NET Core" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.CSharpLogo} alt=".NET Core" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-8.0&WT.mc_id=dotnet-35129-website" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.DotNetCoreLogo} alt=".NET Core" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.DotNetCoreLogo} alt=".NET Core" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://docs.python.org/3/" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.PythonLogo} alt="Python" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.PythonLogo} alt="Python" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://sql.sh/" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.SqlLogo} alt="SQL" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.SqlLogo} alt="SQL" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://git-scm.com/doc" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.GitLogo} alt="Git" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.GitLogo} alt="Git" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://azure.microsoft.com/en-us/products/devops" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.AzureLogo} alt="Azure" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.AzureLogo} alt="Azure" width={width} height={height} className="inline-block mr-2" />
             </a>
           </div>
 
@@ -196,37 +195,37 @@ export default function Home() {
           <br />
           <div>
             <a href="https://developer.mozilla.org/fr/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.HtmlLogo} alt="HTML" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.HtmlLogo} alt="HTML" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://developer.mozilla.org/fr/docs/Web/CSS" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.CssLogo} alt="CSS" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.CssLogo} alt="CSS" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.JsLogo} alt="JavaScript" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.JsLogo} alt="JavaScript" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.TypescriptLogo} alt="Typescript" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.TypescriptLogo} alt="Typescript" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://ionicframework.com/" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.IonicLogo} alt="Ionic" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.IonicLogo} alt="Ionic" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://reactjs.org/docs/getting-started.html" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.ReactLogo} alt="React" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.ReactLogo} alt="React" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.BootstrapLogo} alt="Bootstrap" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.BootstrapLogo} alt="Bootstrap" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://nodejs.org/en/docs/" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.NodeLogo} alt="Node.js" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.NodeLogo} alt="Node.js" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://sql.sh/" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.SqlLogo} alt="SQL" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.SqlLogo} alt="SQL" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://git-scm.com/doc" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.GitLogo} alt="Git" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.GitLogo} alt="Git" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://azure.microsoft.com/en-us/products/devops" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.AzureLogo} alt="Azure" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.AzureLogo} alt="Azure" width={width} height={height} className="inline-block mr-2" />
             </a>
           </div>
           <br />
@@ -235,22 +234,22 @@ export default function Home() {
           <br />
           <div>
             <a href="https://developer.mozilla.org/fr/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.HtmlLogo} alt="HTML" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.HtmlLogo} alt="HTML" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://developer.mozilla.org/fr/docs/Web/CSS" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.CssLogo} alt="CSS" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.CssLogo} alt="CSS" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.JsLogo} alt="JavaScript" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.JsLogo} alt="JavaScript" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://symfony.com/doc/current/index.html" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.SymfonyLogo} alt="Symfony" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.SymfonyLogo} alt="Symfony" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.ThreeJs} alt="Three.js" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.ThreeJs} alt="Three.js" width={width} height={height} className="inline-block mr-2" />
             </a>
             <a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/" target="_blank" rel="noopener noreferrer">
-              <Image src={allLogos.CSharpLogo} alt=".NET Core" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.CSharpLogo} alt=".NET Core" width={width} height={height} className="inline-block mr-2" />
             </a>
           </div>
 
@@ -260,7 +259,7 @@ export default function Home() {
     if (lowerCaseMessage.includes("contact")) {
       botResponse.push(
         <span>
-          You can find me on <a href="https://www.linkedin.com/in/romain-martineau-8570/" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">LinkedIn</a> or by email at <a href="mailto:romainmart.85@gmail.com" className="text-blue-500 underline">romainmart.85@gmail.com</a>
+          You can find me on <a href="https://www.linkedin.com/in/romain-martineau-8570/" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">LinkedIn</a>, on my  <a href="https://github.com/Romain857" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">Github</a> or by email at <a href="mailto:romainmart.85@gmail.com" className="text-blue-500 underline">romainmart.85@gmail.com</a>
         </span>
       );
     }
@@ -332,7 +331,7 @@ export default function Home() {
       <div className="flex items-center justify-between bg-[#ededfc] bg-opacity-100 md:rounded-tr-3xl p-4">
         <div className="flex items-center">
           <Link href="/resume">
-            <Image src={photo} alt="Photo" width={60} height={50} className="rounded-full" />
+            <Image src={images.photo} alt="Photo" width={60} height={50} className="rounded-full" />
           </Link>
           <div className="ml-8">
             <span className="text-lg text-black font-semibold">Romain Martineau</span>
