@@ -1,11 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
-import "./globals.css";
+import "../styles/globals.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faUser, faBriefcase, faMessage } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import Image from "next/image";
-import * as allLogos from "./utils/index";
+import * as allLogos from "../utils/images";
 // import { metadata } from "./components/metadata";
 
 export default function RootLayout({
@@ -49,7 +49,7 @@ export default function RootLayout({
               </a>
             </div>
             <div className="absolute left-1/2 transform -translate-x-1/2 text-gray-800 hover:text-gray-600 font-semibold text-bold">
-              Portfolio - Romain Martineau
+              &copy; Portfolio - Romain Martineau
             </div>
             <div className="flex space-x-4 text-gray-800 hover:text-gray-600">
               {isMounted && (
