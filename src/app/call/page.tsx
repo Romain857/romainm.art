@@ -34,9 +34,11 @@ const contactsItems = [
 ]
 export default function CallPage() {
   const [searchTerm, setSearchTerm] = useState("");
-  const filterItems = contactsItems.filter(contact =>
-    contact.name.toLowerCase().includes(searchTerm.toLowerCase())
-  )
+  const filterItems = searchTerm
+    ? contactsItems.filter(contact =>
+      contact.name.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    : contactsItems;
   return (
     <div className="flex flex-col h-full p-6 mx-1">
       <h1 className="text-3xl font-semibold mb-4">Contacts</h1>
@@ -74,7 +76,7 @@ export default function CallPage() {
               icon={contact.icon}
               className={contact.class}
             />
-            <a href={contact.link} target="_blank" rel="noopener noreferrer" className="pl-4 hover:underline">
+            <a href={contact.link} target="_blank" rel="noopener noreferrer" className="pl-5 font-semibold hover:underline">
               {contact.name}
             </a>
           </div>

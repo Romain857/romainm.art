@@ -342,7 +342,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex space-x-10 md:mr-12 text-gray-600">
+        <div className="flex items-center space-x-10 md:mr-12 text-gray-600">
           <Link href="/call" className="hover:text-gray-400">
             <FontAwesomeIcon icon={faPhone} className="mb-2 w-8 h-5" />
           </Link>
