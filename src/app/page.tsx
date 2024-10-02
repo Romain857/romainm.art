@@ -120,7 +120,8 @@ export default function Home() {
               </a>
             </li>
             <li>
-              <Image src={images.VueLogo} alt="Nuxt.js" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.NuxtLogo} alt="Nuxt.js" width={width} height={height} className="inline-block mr-2" />
+              <Image src={images.VueLogo} alt="Vue.js" width={width} height={height} className="inline-block mr-2" />
               <a href="https://nuxt.com/" target="_blank" rel="noopener noreferrer">
                 <strong>Nuxt.js / Vue.js</strong>
               </a>
@@ -134,7 +135,7 @@ export default function Home() {
             <li>
               <Image src={images.CSharpLogo} alt=".NET Core" width={width} height={height} className="inline-block mr-2" />
               <a href="https://docs.microsoft.com/fr-fr/dotnet/core/introduction" target="_blank" rel="noopener noreferrer">
-                <strong>.NET Core</strong>
+                <strong>C# .NET</strong>
               </a>
             </li>
             <li>
@@ -341,7 +342,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex space-x-10 md:mr-12 text-gray-600">
+        <div className="flex items-center space-x-10 md:mr-12 text-gray-600">
           <Link href="/call" className="hover:text-gray-400">
             <FontAwesomeIcon icon={faPhone} className="mb-2 w-8 h-5" />
           </Link>

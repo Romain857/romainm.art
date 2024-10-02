@@ -37,7 +37,7 @@ export default function RootLayout({
         <header className="hidden md:block w-full bg-white bg-opacity-50 shadow-lg fixed">
           <nav className="flex items-center justify-between mx-4">
             <div className="flex space-x-2">
-              <span className="mx-2 text-black">Made with</span>
+              <span className="mx-2 font-semibold text-gray-800 hover:text-gray-600">Made with</span>
               <a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer">
                 <Image src={allLogos.NextLogo} alt="NextJS" width={18} height={18} className="inline-block mr-2" />
               </a>
@@ -105,6 +105,5 @@ export default function RootLayout({
         </div>
       </body>
     </html>
-
   );
 }
